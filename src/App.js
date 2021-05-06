@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 
 import firebase from 'firebase/app';
@@ -29,7 +29,7 @@ function App() {
     <div className="App">
       <header></header>
       <section>
-        {user ? <ChatRoom /> : <SignIn /> && <SignOut />}
+        {user ? <ChatRoom /> : <SignIn />}
       </section>
     </div>
   );
