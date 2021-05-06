@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import './App.css';
 
 import firebase from 'firebase/app';
@@ -27,7 +27,10 @@ function App() {
 
   return (
     <div className="App">
-      <header></header>
+      <header>
+        <h1>Jabber Jibber</h1>
+        <SignOut/>
+      </header>
       <section>
         {user ? <ChatRoom /> : <SignIn />}
       </section>
@@ -97,7 +100,7 @@ function App() {
 
     return (
       <div className={`message ${messageClass}`}>
-        <img alt='' src={photoURL} />
+        <img alt='profile pic' src={photoURL} />
         <p>{ text }</p>
       </div>
     )
