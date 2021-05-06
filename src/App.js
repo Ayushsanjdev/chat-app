@@ -29,7 +29,7 @@ function App() {
     <div className="App">
       <header></header>
       <section>
-        {user ? <ChatRoom /> : <SignIn />}
+        {user ? <ChatRoom /> : <SignIn /> && <SignOut />}
       </section>
     </div>
   );
@@ -57,23 +57,50 @@ function App() {
 
     const [messages] = useCollectionData(query, {idField: 'id'});
 
+    const [formValue, setFormValue] = useState('');
+
+    const sendMessage = async (e) => {
+      e.preventDefault();
+      
+      const { uid, photoURL } = auth.currentUser;
+
+      await messageRef.add({
+        text: formValue,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        uid,
+        photoURL
+      })
+      
+      setFormValue('');
+    }
+
     return (
-      <div>
+      <>
         <div>
           {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
         </div>
+        <form onSubmit={sendMessage}>
 
-        <div>
+          <input value={formValue} onChange={(e) => setFormValue(e.target.value)} />
 
-        </div>
-      </div>
+          <button type="submit">▶▶</button>
+
+        </form>
+      </>
     )
   }
 
   function ChatMessage(props) {
-    const {text, uid} = props.message;
+    const {text, uid, photoURL } = props.message;
 
-    return <p>text is: { text }</p>
+    const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
+
+    return (
+      <div className={`message ${messageClass}`}>
+        <img alt='' src={photoURL} />
+        <p>{ text }</p>
+      </div>
+    )
   }
 }
 
