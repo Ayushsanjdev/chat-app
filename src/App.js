@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Jabber Jibber</h1>
+        <h1>Jabber Jibber 📳</h1>
         <SignOut/>
       </header>
       <section>
@@ -36,6 +36,7 @@ function App() {
       </section>
     </div>
   );
+}
 
   function SignIn() {
     const signInWithGoogle = () => {
@@ -43,7 +44,10 @@ function App() {
       auth.signInWithPopup(provider);
     }
     return (
+      <>
       <button onClick={signInWithGoogle}>Sign in with google</button>
+      <p>No violation and copyright !</p>
+      </>
     )
   }
 
@@ -55,8 +59,10 @@ function App() {
 
   function ChatRoom() {
 
-    const messageRef = firestore.collection('messages');
-    const query = messageRef.orderBy('create At').limit(25);
+    const dummy = useRef();
+
+    const messagesRef = firestore.collection('messages');
+    const query = messagesRef.orderBy('createdAt').limit(25);
 
     const [messages] = useCollectionData(query, {idField: 'id'});
 
@@ -67,7 +73,7 @@ function App() {
       
       const { uid, photoURL } = auth.currentUser;
 
-      await messageRef.add({
+      await messagesRef.add({
         text: formValue,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         uid,
@@ -75,18 +81,25 @@ function App() {
       })
       
       setFormValue('');
+
+      dummy.current.scrollIntoView({ behavior: 'smooth' });
     }
 
     return (
       <>
-        <div>
+        <main>
           {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
-        </div>
+
+          <span ref={dummy}>
+
+          </span>
+
+        </main>
         <form onSubmit={sendMessage}>
 
-          <input value={formValue} onChange={(e) => setFormValue(e.target.value)} />
+          <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="type something... " />
 
-          <button type="submit">▶▶</button>
+          <button type="submit" disabled={!formValue}>Send</button>
 
         </form>
       </>
@@ -98,13 +111,12 @@ function App() {
 
     const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
-    return (
+    return (<>
       <div className={`message ${messageClass}`}>
-        <img alt='profile pic' src={photoURL} />
-        <p>{ text }</p>
+        <img alt='profile pic' src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png' } />
+        <p>{text}</p>
       </div>
-    )
+    </>)
   }
-}
 
 export default App;
