@@ -27,7 +27,7 @@ function App() {
     <div className="App">
       <header>
         <h1>
-          Jabber Jibber{" "}
+          Jibber Jabber
           <span role="img" aria-label="accessible">
             📳
           </span>
@@ -47,7 +47,7 @@ function SignIn() {
   return (
     <>
       <button onClick={signInWithGoogle}>Sign in with google</button>
-      <p>No violation and copyright !</p>
+      <p style={{ textAlign: "center" }}>No violation and copyright !</p>
     </>
   );
 }
