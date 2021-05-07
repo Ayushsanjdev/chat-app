@@ -4,6 +4,8 @@ import firebase from 'firebase/app';
 
 import './firebaseConfig';
 
+import SignInForm from './SignInForm';
+
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
@@ -38,6 +40,7 @@ function App() {
     }
     return (
       <>
+        <SignInForm/>
         <button onClick={signInWithGoogle}>Sign in with google</button>
 
         <p style={{textAlign: 'center', margin: '1rem auto', color: 'red', fontSize: 'smaller'}}>No violation and copyright !</p>
