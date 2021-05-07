@@ -3,7 +3,7 @@ import './App.css';
 import firebase from 'firebase/app';
 
 import './firebaseConfig';
-import './auth';
+
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
@@ -38,8 +38,10 @@ function App() {
     }
     return (
       <>
-      <button onClick={signInWithGoogle}>Sign in</button>
-      <p style={{textAlign: 'center', margin: '1rem auto', color: 'red', fontSize: 'smaller'}}>No violation and copyright !</p>
+        <button onClick={signInWithGoogle}>Sign in with google</button>
+
+        <p style={{textAlign: 'center', margin: '1rem auto', color: 'red', fontSize: 'smaller'}}>No violation and copyright !</p>
+      
       </>
     )
   }
