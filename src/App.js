@@ -4,11 +4,12 @@ import firebase from 'firebase/app';
 
 import './firebaseConfig';
 
-// import SignInForm from './SignInForm';
+import './form';
 
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+import FormComponent from './form';
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -40,8 +41,14 @@ function App() {
     }
     return (
       <>
-        {/* <SignInForm/> */}
-        <button onClick={signInWithGoogle}>Sign in with google</button>
+        <FormComponent/>
+        <br />
+        <small style={{textAlign: 'center', color: '#fff' }}>or</small>
+        <br />
+        
+        <button onClick={signInWithGoogle} className='googleBtn'>
+          <img alt='' src="https://img.icons8.com/carbon-copy/100/000000/google-logo.png" />
+        </button>
 
         <p style={{textAlign: 'center', margin: '1rem auto', color: 'red', fontSize: 'smaller'}}>No violation and copyright !</p>
       

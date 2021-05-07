@@ -1,5 +1,5 @@
 * {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: sans-serif;
 }
 
 body {
@@ -34,7 +34,7 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  background-color: rgb(44, 44, 46);
+  background-color: rgb(46, 43, 43);
 }
 
 main {
@@ -70,7 +70,7 @@ form {
 }
 
 form button {
-  max-width: 15%;
+  width: 150px;
   background-color: rgb(0, 0, 158);
 }
 
@@ -86,15 +86,16 @@ input {
 }
 
 button {
-    background-color: #252525;
+    background-color: #348b02;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
     font-size: 1.25rem;
+    width: 110px;
 }
 
 button:hover {
@@ -156,4 +157,27 @@ img {
   height: 40px;
   border-radius: 50%;
   margin: 2px 5px;
+}
+
+.formComponent {
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
+  border: 5px groove grey;
+}
+
+.userName, .passWord {
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.formBtn {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.googleBtn {
+  margin: 0 auto;
+  height: 70px;
+  width: fit-content;
 }
