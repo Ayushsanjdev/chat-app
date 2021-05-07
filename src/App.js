@@ -1,30 +1,21 @@
 import React, {useRef, useState} from 'react';
 import './App.css';
-
-import './auth';
-
 import firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/auth';
+
+import './firebaseConfig';
+import './auth';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-
-firebase.initializeApp({
-  apiKey: "AIzaSyBSOd8tuoKqaC9z3Qrmw8zqAm0_HVLYwiw",
-  authDomain: "jibber-jabber-3e686.firebaseapp.com",
-  projectId: "jibber-jabber-3e686",
-  storageBucket: "jibber-jabber-3e686.appspot.com",
-  messagingSenderId: "145479449441",
-  appId: "1:145479449441:web:c29b4c2498e5618201e320"
-})
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
 
+
 function App() {
 
+  
   const [user] = useAuthState(auth); 
 
   return (
@@ -47,8 +38,8 @@ function App() {
     }
     return (
       <>
-      <button onClick={signInWithGoogle}>Sign in with google</button>
-      <p style={{textAlign: 'center', margin: '2rem auto', color: 'red'}}>No violation and copyright !</p>
+      <button onClick={signInWithGoogle}>Sign in</button>
+      <p style={{textAlign: 'center', margin: '1rem auto', color: 'red', fontSize: 'smaller'}}>No violation and copyright !</p>
       </>
     )
   }
