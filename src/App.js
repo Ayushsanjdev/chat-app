@@ -46,7 +46,7 @@ function App() {
     return (
       <>
       <button onClick={signInWithGoogle}>Sign in with google</button>
-      <p>No violation and copyright !</p>
+      <p style={{textAlign: 'center', margin: '2rem auto', color: 'red'}}>No violation and copyright !</p>
       </>
     )
   }

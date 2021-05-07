@@ -1,5 +1,5 @@
 * {
-    font-family: serif;
+    font-family: sans-serif;
 }
 
 body {
@@ -87,7 +87,7 @@ input {
 }
 
 button {
-    background-color: #28292b;
+    background-color: #252525;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -96,6 +96,11 @@ button {
     display: inline-block;
     cursor: pointer;
     font-size: 1.25rem;
+}
+
+button:hover {
+    color: springgreen;
+    cursor: pointer;
 }
 
 button:disabled {
