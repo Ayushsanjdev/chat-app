@@ -39,7 +39,7 @@ function App() {
         <h3 style={{color: '#eee'}}>Sign In With Google</h3>
         
         <button onClick={signInWithGoogle} className='googleBtn'>
-          <img alt='' className='googleImg' src="https://img.icons8.com/carbon-copy/100/000000/google-logo.png" />
+          <img alt='' className='googleImg' src="https://img.icons8.com/cute-clipart/64/000000/google-logo.png" />
         </button>
         
         <p style={{textAlign: 'center', margin: '1rem auto', color: '#999', fontSize: 'smaller'}}>No rules violation and copyright !</p>
