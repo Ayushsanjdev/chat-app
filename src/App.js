@@ -12,7 +12,7 @@ const firestore = firebase.firestore();
 //app starts here
 function App() {
 
-  
+
   const [user] = useAuthState(auth); 
 
   return (
@@ -50,7 +50,9 @@ function App() {
 
   function SignOut() {
     return auth.currentUser && (
-      <button onClick={() => auth.signOut()}>Sign Out</button>
+      <button onClick={() => auth.signOut()}>
+        <img src="https://img.icons8.com/nolan/50/logout-rounded-left.png" alt='' />
+      </button>
     )
   }
 
@@ -96,7 +98,9 @@ function App() {
 
           <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="type something... " />
 
-          <button type="submit" disabled={!formValue}>Send</button>
+          <button type="submit" disabled={!formValue}>
+          <img src="https://img.icons8.com/fluent/48/000000/filled-sent.png" alt='send-icon'/>
+          </button>
 
         </form>
       </>

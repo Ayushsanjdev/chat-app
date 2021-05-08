@@ -1,5 +1,5 @@
 * {
-    font-family: sans-serif;
+    font-family: cursive;
 }
 
 body {
@@ -70,8 +70,7 @@ form {
 }
 
 form button {
-  width: 150px;
-  background-color: rgb(0, 0, 158);
+  width: 80px;
 }
 
 input {
@@ -86,16 +85,14 @@ input {
 }
 
 button {
-    background-color: #348b02;
     border: none;
-    color: white;
-    padding: 15px;
+    padding: 5px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
     font-size: 1.25rem;
-    width: 110px;
+    width: 80px;
 }
 
 button:hover {
@@ -125,7 +122,7 @@ p {
   max-width: 500px;
   margin-bottom: 12px;
   line-height: 24px;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border-radius: 25px;
   position: relative;
   color: white;
@@ -143,13 +140,13 @@ p {
 
 .sent p {
   color: white;
-  background: #0095ff;
+  background: #ff5e00;
   align-self: flex-end;
 }
 
 .received p {
-  background: #e5e5ea;
-  color: black;
+  background: #f700ff;
+  color: rgb(252, 252, 252);
 }
 
 img {
@@ -159,7 +156,7 @@ img {
   margin: 2px 5px;
 }
 
-.formComponent {
+/* .formComponent {
   width: 300px;
   height: auto;
   margin: 0 auto;
@@ -167,12 +164,12 @@ img {
   border-bottom-left-radius: 20px;
   border-top-right-radius: 20px;
   overflow: hidden;
-}
+} */
 
-.userName, .passWord {
+/* .userName, .passWord {
   width: 90%;
   margin: 1rem auto;
-}
+} */
 
 .formBtn {
   width: 100px;
