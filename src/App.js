@@ -1,21 +1,16 @@
 import React, {useRef, useState} from 'react';
 import './App.css';
 import firebase from 'firebase/app';
-
 import './firebaseConfig';
-
 import './form';
-
-
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import FormComponent from './form';
+// import FormComponent from './form';
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
-
-
+//app starts here
 function App() {
 
   
@@ -24,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Jabber Jibber 📳</h1>
+        <h2>Jabber Jibber 📳</h2>
         <SignOut/>
       </header>
       <section>
@@ -35,22 +30,25 @@ function App() {
 }
 
   function SignIn() {
+    // alert('you are signed in automatically for test')
     const signInWithGoogle = () => {
       const provider = new firebase.auth.GoogleAuthProvider();
       auth.signInWithPopup(provider);
     }
+    // <ChatRoom/>
     return (
       <>
-        <FormComponent/>
-        <br />
-        <small style={{textAlign: 'center', color: '#fff' }}>or</small>
-        <br />
+        {/* <FormComponent/> */}
+        {/* <br /> */}
+        {/* <small style={{textAlign: 'center', color: '#fff' }}>or</small> */}
+        {/* <br /> */}
+        <h3 style={{color: '#eee'}}>Tap Sign In With Google</h3>
         
         <button onClick={signInWithGoogle} className='googleBtn'>
-          <img alt='' src="https://img.icons8.com/carbon-copy/100/000000/google-logo.png" />
+          <img alt='' className='googleImg' src="https://img.icons8.com/carbon-copy/100/000000/google-logo.png" />
         </button>
 
-        <p style={{textAlign: 'center', margin: '1rem auto', color: 'red', fontSize: 'smaller'}}>No violation and copyright !</p>
+        <p style={{textAlign: 'center', margin: '1rem auto', color: '#999', fontSize: 'smaller'}}>No rules violation and copyright !</p>
       
       </>
     )

@@ -163,7 +163,10 @@ img {
   width: 300px;
   height: auto;
   margin: 0 auto;
-  border: 5px groove grey;
+  border: 5px ridge grey;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  overflow: hidden;
 }
 
 .userName, .passWord {
@@ -174,10 +177,22 @@ img {
 .formBtn {
   width: 100px;
   margin: 0 auto;
+  border-radius: 10px;
 }
 
 .googleBtn {
   margin: 0 auto;
-  height: 70px;
-  width: fit-content;
+  height: 60px;
+  width: 70px;
+  border-radius: 30%;
+  background-color: #e5e5ea;
+}
+
+.googleBtn:hover {
+  background-color: #0095ff;
+}
+
+.googleImg {
+  width: 30px;
+  height: 30px;
 }
