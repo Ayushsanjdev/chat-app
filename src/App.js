@@ -47,7 +47,7 @@ function App() {
         <button onClick={signInWithGoogle} className='googleBtn'>
           <img alt='' className='googleImg' src="https://img.icons8.com/carbon-copy/100/000000/google-logo.png" />
         </button>
-        <p>Just checking if it is updating directly or not!!??!!(this paragraph is temp)</p>
+        
         <p style={{textAlign: 'center', margin: '1rem auto', color: '#999', fontSize: 'smaller'}}>No rules violation and copyright !</p>
       
       </>
