@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h2>Jabber Jibber beta* 📳</h2>
+        <h2>Jabber Jibber beta* <img src="https://img.icons8.com/cute-clipart/64/000000/chat.png" alt='icon' style={{verticalAlign: 'middle'}} /></h2>
         <SignOut/>
       </header>
       <section>
