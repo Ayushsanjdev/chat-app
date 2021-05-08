@@ -2,10 +2,9 @@ import React, {useRef, useState} from 'react';
 import './App.css';
 import firebase from 'firebase/app';
 import './firebaseConfig';
-import './form';
+
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-// import FormComponent from './form';
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -30,19 +29,14 @@ function App() {
 }
 
   function SignIn() {
-    // alert('you are signed in automatically for test')
     const signInWithGoogle = () => {
       const provider = new firebase.auth.GoogleAuthProvider();
       auth.signInWithPopup(provider);
     }
-    // <ChatRoom/>
+
     return (
       <>
-        {/* <FormComponent/> */}
-        {/* <br /> */}
-        {/* <small style={{textAlign: 'center', color: '#fff' }}>or</small> */}
-        {/* <br /> */}
-        <h3 style={{color: '#eee'}}>Tap Sign In With Google</h3>
+        <h3 style={{color: '#eee'}}>Sign In With Google</h3>
         
         <button onClick={signInWithGoogle} className='googleBtn'>
           <img alt='' className='googleImg' src="https://img.icons8.com/carbon-copy/100/000000/google-logo.png" />
